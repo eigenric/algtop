@@ -416,6 +416,29 @@ donde $J: \mathbb{R}^{2} \rightarrow \mathbb{R}^{2}$ es el giro de ángulo $\pi 
 (11) Sean $f, g: \mathbb{R}^{2} \rightarrow \mathbb{R}^{2}$ aplicaciones continuas y acotadas. Demostrar que existe un punto $q \in \mathbb{R}^{2}$ tal que $f(q)=q-3 g(q)$.\\
 \end{ejer}
 
+\begin{sol}
+Como están acotadas, $\operatorname{Im} f \subset \bar{B}(0, R)$ y $\operatorname{Im} g \subset \bar{B}(0, R')$ para ciertos $R < R' \in \mathbb{R}$.
+Así, $f : \mathbb{R}^2 \rightarrow \bar{B}(0, R)$ y $g: \mathbb{R}^2 \rightarrow \bar{B}(0, R)$
+serán continuas y sobreyectivas y podemos restringir el dominio, conservando la continuidad:
+
+$$
+f: \bar{B}(0, R) \rightarrow \bar{B}(0, R)
+$$
+
+$$
+g: \bar{B}(0, R) \rightarrow \bar{B}(0, R)
+$$
+
+Sea $h: \bar{B}(0,R) \rightarrow \bar{B}(0, R)$ dada por
+$$ h(x) = f(x) + 3g(x) $$
+
+Es continua por ser suma de continuas. Utilizando que $\bar{B}(0, R) \cong \bar{D}$
+y el Ejercicio variación del Teorema del Punto Fijo de Brouwer, obtenemos que $\exists q \in \bar{B}(0, R) $ tal que
+$h(q) = q$.
+
+Luego $f(q) + 3g(q) = q$ y $f(q) = q - 3g(q)$, como ser quería.
+
+\end{sol}
 
 \begin{ejer}
 (12) Demostrar que el sistema de ecuaciones
