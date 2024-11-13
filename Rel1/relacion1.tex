@@ -292,6 +292,28 @@ es continua matricialmente (fórmula de la inversa , cofactores y determinante y
 (3) Sean $f, g:[0,1] \rightarrow X$ arcos con el mismo punto inicial $x \in X$ y el mismo punto final $y \in Y$. Demostrar que $f \simeq g$ si solo si $f * \bar{g}$ es un lazo homotópico al lazo constante $\varepsilon_{x}$.\\
 \end{ejer}
 
+
+\begin{sol}
+
+Usaremos las siguientes propiedades:
+
+Si $f \simeq g$, entonces $f*h \simeq g*h$, empezando $h$ en $z$ y acabando en $x$. 
+Además $g * \bar{g} \simeq \varepsilon_x$.
+
+\newpage 
+
+$\boxed{\Rightarrow}\;\;$ Considerando $h = \bar{g}$, tenemos que $f*\bar{g} \simeq g * \bar{g} \simeq \varepsilon_x$. 
+
+$\boxed{\Leftarrow}\;\;$ Considerando $h = g$, tenemos que si $f * \bar{g} \simeq \varepsilon_x $ entonces 
+
+$$f * \bar{g} * g \simeq \varepsilon_x * g$$
+$$f * \varepsilon_x \simeq \varepsilon_x * g$$
+$$f \simeq g$$
+
+
+\end{sol}
+
+
 \begin{ejer}
 (4) Demostrar que si $f, g:[0,1] \rightarrow X$ son arcos con $f(1)=g(0)$ entonces $\overline{f * g}=\bar{g} * \bar{f}$.\\
 \end{ejer}
