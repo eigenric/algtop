@@ -1,0 +1,235 @@
+\documentclass[
+  a4paper,
+  spanish,
+  12pt,
+]{scrartcl}
+
+\linespread{1.05}
+%\setlength{\parindent}{18pt}
+
+
+%-------------------------------------------------------------------------------
+%	PAQUETES
+%-------------------------------------------------------------------------------
+
+% Idioma
+
+\usepackage{indentfirst}
+% Matemáticas
+
+\usepackage{mathrsfs}
+
+\usepackage{config}
+% \usepackage{amsmath, amsthm, amssymb}
+% \usepackage{mathtools}
+% \usepackage{commath}
+% \usepackage{xfrac}
+
+
+% Fuentes personalizadas para utilizar con XeLaTeX o LuaLaTeX
+
+\usepackage[no-math]{fontspec}
+\setmainfont[WordSpace=1.3, RawFeature={+ss06}]{EBGaramond}
+\setsansfont[Scale=0.9]{Alegreya Sans}
+\setmonofont[Scale=0.75]{Bitstream Vera Sans Mono}
+
+\usepackage[math-style=TeX]{unicode-math}
+\setmathfont{Garamond Math}[StylisticSet={3}]
+
+
+% Configuración de microtype
+
+\defaultfontfeatures{Ligatures=TeX,Numbers=Lining}
+\usepackage[activate={true,nocompatibility},final,tracking=true,factor=1100,stretch=10,shrink=10]{microtype}
+\SetTracking{encoding={*}, shape=sc}{0}
+
+% Enlaces y colores
+
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+  colorlinks=true,
+  citecolor=,
+  linkcolor=,
+  urlcolor=blue,
+}
+
+% Otros elementos de página
+
+\usepackage{enumitem}
+\setlist[enumerate]{leftmargin=-\itemindent, itemsep=0pt}
+\setlist[itemize]{leftmargin=-\itemindent, itemsep=0pt}
+%\setlist[itemize]{leftmargin=*}
+%\setlist[enumerate]{leftmargin=*}
+
+\usepackage[labelfont={sc, sf}, textfont=sf]{caption}
+
+\usepackage{booktabs}
+\renewcommand\arraystretch{1.5}
+
+% Tikz
+
+\usepackage{tikz}
+\usetikzlibrary{babel}
+\usepackage{float}
+
+% Código
+
+\usepackage{listings}
+\lstset{
+	basicstyle=\ttfamily,%
+	breaklines=true,%
+	captionpos=b,                    % sets the caption-position to bottom
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  frame=lines,
+  numbers=left,
+  stepnumber=1,
+  aboveskip=12pt,
+  showstringspaces=false,
+  keywordstyle=\bfseries,
+  commentstyle=\itshape,
+  columns=flexible,
+}
+\renewcommand{\lstlistingname}{Listado}
+
+% ENTORNOS
+
+\usepackage[theorems, skins, breakable]{tcolorbox}
+
+\tcolorboxenvironment{nth}{
+	blanker,
+	breakable,
+	left=12pt,
+	before skip=12pt,
+	after skip=12pt,
+	borderline west={2pt}{0pt}{500},
+	before upper={\parindent 12pt},
+}
+
+\tcolorboxenvironment{nprop}{
+	blanker,
+	breakable,
+	left=12pt,
+	before skip=12pt,
+	after skip=12pt,
+	borderline west={2pt}{0pt}{42},
+	before upper={\parindent 12pt},
+}
+
+\tcolorboxenvironment{ncor}{
+	blanker,
+	breakable,
+	left=12pt,
+	before skip=12pt,
+	after skip=12pt,
+	borderline west={2pt}{0pt}{300},
+	before upper={\parindent 12pt},
+}
+
+\tcolorboxenvironment{ndef}{
+	skin=enhancedmiddle jigsaw,
+	frame hidden,
+	colback= 36,
+	breakable = true,
+	break at = -6pt,
+	top = 4pt,       % Estos márgenes están un poco a ojo
+	bottom = 4pt,
+	left= 8pt,
+	right = 8pt,
+	before skip=8pt, % Normalmente dejamos 12pt, pero
+	after skip=8pt,  % aquí tenemos espacio adicional por el fondo
+	no borderline,
+	borderline west={2pt}{0pt}{42},
+	before upper={\parindent 12pt},
+}
+
+\tcolorboxenvironment{ejer}{
+	skin=enhancedmiddle jigsaw,
+	frame hidden,
+	colback=50,
+	breakable = true,
+	break at = -6pt,
+	top = 4pt,       % Estos márgenes están un poco a ojo
+	bottom = 4pt,
+	left= 8pt,
+	right = 8pt,
+	before skip=8pt, % Normalmente dejamos 12pt, pero
+	after skip=8pt,  % aquí tenemos espacio adicional por el fondo
+	no borderline,
+	borderline west={2pt}{0pt}{500},
+	borderline east={2pt}{0pt}{50},
+	before upper={\parindent 12pt},
+}
+
+
+% Márgenes
+\usepackage[bottom=3.125cm, top=2.5cm, left=3.5cm, right=3.5cm, marginparwidth=70pt]{geometry}
+
+%dealing with (sub/subsub)sections
+%\let\raggedsection\centering%Center all sectioningheads
+%all levels have something in common, let's save typing:
+\RedeclareSectionCommands[beforeskip=-3ex,
+afterskip=2ex]{section,subsection,subsubsection}
+\addtokomafont{section}{\normalfont\large\textsc}
+\RedeclareSectionCommand[beforeskip=-6ex]{section}
+\addtokomafont{subsection}{\normalfont\itshape}
+
+%-------------------------------------------------------------------------------
+%	CONTENIDO
+%-------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{flushright}
+  Ricardo Ruiz Fernández de Alba\vspace{.5em}
+
+  \textit{Probabilidad}
+
+  Doble Grado en Ingeniería Informática y Matemáticas
+
+  \textsc{Universidad de Granada}\vspace{.5em}
+
+  \today\vspace{.5em}
+\end{flushright}
+
+\begin{flushleft}
+  \scshape\Large Relación de Ejercicios del Tema 3
+\end{flushleft}
+
+
+\begin{ejer}
+	Sea $S$ una superficie y $f: S \rightarrow R$ una función continua. Definimos el grafo de $f$ 
+	$$
+	G(f) = \{ (x,t) \in S \times \mathbb{R}: t = f(x) \}
+	$$
+Sea $(G(f), \tau_{G(f)})$ e.t, probar que es una superficie y que además es compacta si y sólo si $S$ es compacta.
+\end{ejer}
+
+\begin{sol}
+Como $S$ es superficie, se tendrá que es un espacio topológico localmente euclídeo, T2 y 2AN.
+Para ver que $G(f)$ es superficie debemos probar estas tres:
+\begin{itemize}
+    \item{$G(f)$ es T2}
+    
+    $G(f) \subset S \times \mathbb{R}$. Como $S$ y $\mathbb{R}$ son T2, se tendrá que $S \times \mathbb{R}$ es T2 con la topología producto y por tanto $G(f)$ herederará T2 con la topología inducida.
+    
+    \item{$G(f)$ es 2AN}
+    
+    $G(f) \subset S \times \mathbb{R}$. Como $S$ y $\mathbb{R}$ son 2AN, se tendrá que $S \times \mathbb{R}$ es 2AN con topología producto y por tanto $G(f)$ herederará la propiedad 2AN con la topología inducida.
+    
+    \item{$G(f)$ es localmente euclídeo}:
+    
+    Sea $(x,t) \in G(f)$. Entonces $x \in S$ y $t = f(x) \in \mathbb{R}$. Como $S$ es localmente euclídeo, existirá $U \in \mathcal{U}^x$ entorno abierto de $x$ que será homeomorfo (por $\varphi$) a un abierto $V_1\subset \mathbb{R}^2$.
+    
+    Por otro lado, si consideramos $V_2$ entorno abierto de $f(x)$ tal que $V_2=f(V_1)$, se tendrá que $V_1 \times V_2$ será entorno abierto de $(x,f(x)) \in S \times \mathbb{R}$
+    
+    De hecho, si consideramos $F: V_1 \times f(V_1) \rightarrow F(V_1 \times f(V_1))$
+    dada por $F(x,f(x)) = \varphi(x)$ entonces $F(V_1 \times f(V_1))$ es imagen de un abierto de $S \times \mathbb{R}$ por un homeomorfismo ($\varphi$) y por tanto un abierto.
+    
+    
+\end{itemize}
+
+\end{sol}
+
+
+\end{document}
