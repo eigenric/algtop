@@ -318,6 +318,38 @@ $$f \simeq g$$
 (4) Demostrar que si $f, g:[0,1] \rightarrow X$ son arcos con $f(1)=g(0)$ entonces $\overline{f * g}=\bar{g} * \bar{f}$.\\
 \end{ejer}
 
+$$
+\overline{(f*g)}(t) = (f*g)(1-t) =
+\begin{cases} 
+    f(2 - 2t) & \text{si } t \in \left( \frac{1}{2}, 1 \right], \\
+    g(2(1 - t) - 1) & \text{si } t \in \left( 0, \frac{1}{2} \right]
+\end{cases} =
+$$
+$$
+= \begin{cases} 
+    g(1 - 2t) & \text{si } t \in \left( 0, \frac{1}{2} \right],  \\
+    f(2 - 2t) & \text{si } t \in \left( \frac{1}{2}, 1 \right]
+\end{cases}
+$$
+
+$$
+(\bar{g}*\bar{t})(t) = 
+\begin{cases} 
+    \bar{g}(2t) & \text{si } t \in \left( 0, \frac{1}{2} \right], \\
+    \bar{f}(2t-1) & \text{si } t \in \left( \frac{1}{2}, 1 \right]
+\end{cases} =
+$$
+
+$$
+= \begin{cases} 
+    g(1-2t) & \text{si } t \in \left( 0, \frac{1}{2} \right], \\
+    f(1-2t+1) & \text{si } t \in \left( \frac{1}{2}, 1 \right]
+\end{cases} =
+\begin{cases} 
+    g(1-2t) & \text{si } t \in \left( 0, \frac{1}{2} \right], \\
+    f(2-2t) & \text{si } t \in \left( \frac{1}{2}, 1 \right]
+\end{cases}
+$$
 
 \begin{ejer}
 (5) Sea $f: X \rightarrow Y$ una aplicación continua entre espacios topológicos. Tomamos dos puntos $x_{1}$ y $x_{2}$ en $X$. Denotamos por $\left(f_{*}\right)_{1}: \Pi_{1}\left(X, x_{1}\right) \rightarrow \Pi_{1}\left(Y, f\left(x_{1}\right)\right)$ y por $\left(f_{*}\right)_{2}: \Pi_{1}\left(X, x_{2}\right) \rightarrow \Pi_{1}\left(Y, f\left(x_{2}\right)\right)$ a los homomorfismos inducidos por $f$ en los puntos $x_{1}$ y $x_{2}$. Sea $\gamma:[0,1] \rightarrow X$ un arco con $\gamma(0)=x_{1} \mathrm{y}$ $\gamma(1)=x_{2}$. Demostrar que
