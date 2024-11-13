@@ -20,10 +20,12 @@
 \usepackage{mathrsfs}
 
 \usepackage{config}
-% \usepackage{amsmath, amsthm, amssymb}
+\usepackage{amsmath, amsthm, amssymb}
 % \usepackage{mathtools}
 % \usepackage{commath}
 % \usepackage{xfrac}
+\usepackage{graphicx}
+
 
 
 % Fuentes personalizadas para utilizar con XeLaTeX o LuaLaTeX
@@ -315,7 +317,7 @@ $$f \simeq g$$
 
 
 \begin{ejer}
-(4) Demostrar que si $f, g:[0,1] \rightarrow X$ son arcos con $f(1)=g(0)$ entonces $\overline{f * g}=\bar{g} * \bar{f}$.\\
+(4) Demostrar que si $f, g:[0,1] \rightarrow X$ son arcos con $f(1)=g(0)$ entonces $\overline{f * g}=\bar{g} * \bar{f}$\\
 \end{ejer}
 
 $$
@@ -387,6 +389,13 @@ $$
 (8) Demostrar que toda aplicación continua $f: \mathbb{S}^{1} \rightarrow \mathbb{S}^{1}$ admite una extensión continua $F: \overline{\mathbb{D}} \rightarrow \overline{\mathbb{D}}$, donde $\overline{\mathbb{D}}=\left\{(x, y) \in \mathbb{R}^{2}: x^{2}+y^{2} \leq 1\right\}$ es el disco unidad cerrado.\\
 \end{ejer}
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{ej8.png}
+    \label{fig:etiqueta}
+\end{figure}
+
+
 \begin{ejer}
 (9) Sea $f \in \Omega_{1}\left(\mathbb{S}^{1}\right)$ un lazo de clase $C^{1}$. Demostrar que:
 
@@ -406,6 +415,7 @@ donde $J: \mathbb{R}^{2} \rightarrow \mathbb{R}^{2}$ es el giro de ángulo $\pi 
 \begin{ejer}
 (11) Sean $f, g: \mathbb{R}^{2} \rightarrow \mathbb{R}^{2}$ aplicaciones continuas y acotadas. Demostrar que existe un punto $q \in \mathbb{R}^{2}$ tal que $f(q)=q-3 g(q)$.\\
 \end{ejer}
+
 
 \begin{ejer}
 (12) Demostrar que el sistema de ecuaciones
