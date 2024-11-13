@@ -224,7 +224,7 @@ equivalentemente su centro (subconjunto de elementos que conmutan con todos) es 
 (a) $\mathbb{R}^{n}$ con la suma y la topología usuales.\\
 (b) $\mathbb{R}_{*}=\mathbb{R} \backslash\{0\}$ y $\mathbb{C}_{*}=\mathbb{C} \backslash\{0\}$ con los productos y las topologías usuales.\\
 (c) $\mathbb{S}^{1} \subset \mathbb{C}$ con el producto de números complejos y la topología usual.\\
-(d) El grupo lineal general GL( $n$, el grupo ortogonal $\mathrm{O}(n)$ y el grupo especial ortogonal $\mathrm{SO}(n)$ con el producto de matrices y la topología inducida por $M_{n}(\mathbb{R}) \equiv \mathbb{R}^{n^{2}}$.\\
+(d) El grupo lineal general $GL(n)$, el grupo ortogonal $\mathrm{O}(n)$ y el grupo especial ortogonal $\mathrm{SO}(n)$ con el producto de matrices y la topología inducida por $M_{n}(\mathbb{R}) \equiv \mathbb{R}^{n^{2}}$.\\
 \end{ejer}
 
 \begin{sol}
@@ -253,6 +253,7 @@ $\Phi_2(x_1, x_2) = x_1 \cdot x_2^{-1}$ es continua con $x_1, x_2 \in \mathbb{C}
 
 (c)
 
+
 \begin{itemize}
 \item{$(\mathbb{S^1}, \cdot)$ es un grupo algebraico. Pues dado $z=e^{2\pi it}$, se tiene que $z^{-1}=e^{-2\pi it} \in \mathbb{S}^1$}
 \item{$(\mathbb{S^1}, \tau_u)$ es un espacio topológico (con la topología inducida)}
@@ -260,6 +261,29 @@ $\Phi_2(x_1, x_2) = x_1 \cdot x_2^{-1}$ es continua con $x_1, x_2 \in \mathbb{C}
 	
 $\Phi_1(z_1, z_2) = z_1 \cdot z_2^{-1}$ es continua con $z_1, z_2 \in \mathbb{S}^1$ \\
 }
+\end{itemize}
+
+(d) 
+
+\begin{itemize}
+\item{$GL(n)$ es un grupo algebraico pues toda matriz cuadrada regular tiene inversa.}
+\item{Considerando la topología inducida por $\mathbb{R}^{n^2}$, es además un espacio topológico.}
+\item{La aplicación $\Phi: GL(n) \times GL(n) \rightarrow GL(n)$ dada por $\Phi(A, B) = AB^{-1}$
+es continua matricialmente (fórmula de la inversa , cofactores y determinante y producto de matrices continuo)}
+\end{itemize}
+
+\begin{itemize}
+\item{$O(n)$ es un grupo algebraico pues toda matriz cuadrada ortogonal tiene inversa, que coincide con su traspuesta.}
+\item{Considerando la topología inducida por $\mathbb{R}^{n^2}$, es además un espacio topológico.}
+\item{La aplicación $\Phi: O(n) \times O(n) \rightarrow O(n)$ dada por $\Phi(A, B) = AB^{-1}$
+es continua matricialmente (fórmula de la inversa , cofactores y determinante y producto de matrices continuo)}
+\end{itemize}
+
+\begin{itemize}
+\item{$SO(n)$ es un grupo algebraico pues toda matriz cuadradaa con determinante 1 tiene inversa.}
+\item{Considerando la topología inducida por $\mathbb{R}^{n^2}$, es además un espacio topológico.}
+\item{La aplicación $\Phi: SO(n) \times SO(n) \rightarrow SO(n)$ dada por $\Phi(A, B) = AB^{-1}$
+es continua matricialmente (fórmula de la inversa , cofactores y determinante y producto de matrices continuo)}
 \end{itemize}
 
 \end{sol}
