@@ -183,7 +183,7 @@ afterskip=2ex]{section,subsection,subsubsection}
 \begin{flushright}
   Ricardo Ruiz Fernández de Alba\vspace{.5em}
 
-  \textit{Probabilidad}
+  \textit{Topología II}
 
   Doble Grado en Ingeniería Informática y Matemáticas
 
@@ -206,6 +206,18 @@ $$
 
 Demostrar que $Z(G)$ es un subgrupo de $G$, y que $G$ es abeliano si y sólo si $Z(G)=G$.\\
 \end{ejer}
+
+\begin{sol}
+
+Sea $x, y \in Z(G)$. Sea $w \in G$, entonces $yw = wy$ y $w^{-1}y^{-1} = y^{-1}w^{-1}$, luego $y^{-1} \in Z(G)$.
+Sea ahora $z \in G$. Se tendrá que $xy^{-1}z = xzy^{-1} = zxy^{-1}$, donde se ha utilizado que $x,y^{-1} \in Z(G)$.
+Así, $Z(G) \leq G$.
+
+$G$ es es abeliano si cada elemento conmuta con todos los demas,
+equivalentemente su centro (subconjunto de elementos que conmutan con todos) es todo $G$ 
+(todos conmutan).
+
+\end{sol}
 
 \begin{ejer}
 (2) Probar que son grupos topológicos:\\
