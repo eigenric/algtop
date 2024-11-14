@@ -196,40 +196,145 @@ afterskip=2ex]{section,subsection,subsubsection}
   \scshape\Large Relación de Ejercicios del Tema 3
 \end{flushleft}
 
+\begin{ejer}
+(1) Sea $X=\mathbb{S}^{2} \cup\left\{x_{0}\right\}$, donde $x_{0} \in \mathbb{R}^{3} \backslash \mathbb{S}^{2}$. En $X$ se considera la topología tal que los entornos de los puntos de $\mathbb{S}^{2}$ son los usuales, y los de $x_{0}$ son de la forma $(V \backslash\{N\}) \cup\left\{x_{0}\right\}$, donde $N=(0,0,1)$ y $V$ es un entorno de $N$ en $\mathbb{S}^{2}$. Demostrar que $X$ es localmente euclídeo, es IIAN, pero no es $T 2$.\\
+\end{ejer}
 
 \begin{ejer}
-	Sea $S$ una superficie y $f: S \rightarrow R$ una función continua. Definimos el grafo de $f$ 
-	$$
-	G(f) = \{ (x,t) \in S \times \mathbb{R}: t = f(x) \}
-	$$
-Sea $(G(f), \tau_{G(f)})$ e.t, probar que es una superficie y que además es compacta si y sólo si $S$ es compacta.
+(2) Consideremos el espacio producto $X=\mathbb{R}^{2} \times \mathbb{R}$, donde en $\mathbb{R}^{2}$ se considera la topología usual y en $\mathbb{R}$ la topología discreta. Demostrar que $X$ es localmente euclídeo, es $T 2$, pero no es IIAN.\\
+\end{ejer}
+
+\begin{ejer}
+(3) Demostrar que los siguientes espacios topológicos no son superficies:\\
+(a) $S=\left\{(x, y, z) \in \mathbb{R}^{3}: x^{2}+y^{2}-z^{2}=0\right\}$.\\
+(b) $\mathbb{R}^{n}$ con $n \neq 2$.\\
+(c) $S=\left\{(x, y) \in \mathbb{R}^{2}: y \geq 0\right\}$.\\
+¿Es la unión o intersección de dos superficies en $\mathbb{R}^{3}$ una superficie?\\
+\end{ejer}
+
+\begin{ejer}
+(4) Una superficie topológica con borde es un espacio topológico $T 2$ en el que todo punto tiene un entorno abierto homeomorfo a un abierto de $\overline{\mathbb{R}_{+}^{2}}=\left\{(x, y) \in \mathbb{R}^{2} \mid y \geq 0\right\}$. Prueba que el cilindro y la banda de Möbius son superficies topológicas con borde.\\
+\end{ejer}
+
+\begin{ejer}
+(5) Sea $(\widetilde{S}, \pi)$ un recubridor de una superficie topológica $S$. Si $\widetilde{S}$ es IIAN, demostrar que $\widetilde{S}$ es una superficie topológica.\\
+\end{ejer}
+
+\begin{ejer}
+(6) Sean $S$ una superficie y $f: S \rightarrow \mathbb{R}$ una función continua. Definimos el grafo de $f$ como el espacio topológico
+
+$$
+G(f)=\{(x, t) \in S \times \mathbb{R}: t=f(x)\}
+$$
+
+con la topología inducida por la topología producto en $S \times \mathbb{R}$. Probar que $G(f)$ es una superficie, que además es compacta si y sólo si lo es $S$.\\
 \end{ejer}
 
 \begin{sol}
-Como $S$ es superficie, se tendrá que es un espacio topológico localmente euclídeo, T2 y 2AN.
-Para ver que $G(f)$ es superficie debemos probar estas tres:
-\begin{itemize}
-    \item{$G(f)$ es T2}
-    
-    $G(f) \subset S \times \mathbb{R}$. Como $S$ y $\mathbb{R}$ son T2, se tendrá que $S \times \mathbb{R}$ es T2 con la topología producto y por tanto $G(f)$ herederará T2 con la topología inducida.
-    
-    \item{$G(f)$ es 2AN}
-    
-    $G(f) \subset S \times \mathbb{R}$. Como $S$ y $\mathbb{R}$ son 2AN, se tendrá que $S \times \mathbb{R}$ es 2AN con topología producto y por tanto $G(f)$ herederará la propiedad 2AN con la topología inducida.
-    
-    \item{$G(f)$ es localmente euclídeo}:
-    
-    Sea $(x,t) \in G(f)$. Entonces $x \in S$ y $t = f(x) \in \mathbb{R}$. Como $S$ es localmente euclídeo, existirá $U \in \mathcal{U}^x$ entorno abierto de $x$ que será homeomorfo (por $\varphi$) a un abierto $V_1\subset \mathbb{R}^2$.
-    
-    Por otro lado, si consideramos $V_2$ entorno abierto de $f(x)$ tal que $V_2=f(V_1)$, se tendrá que $V_1 \times V_2$ será entorno abierto de $(x,f(x)) \in S \times \mathbb{R}$
-    
-    De hecho, si consideramos $F: V_1 \times f(V_1) \rightarrow F(V_1 \times f(V_1))$
-    dada por $F(x,f(x)) = \varphi(x)$ entonces $F(V_1 \times f(V_1))$ es imagen de un abierto de $S \times \mathbb{R}$ por un homeomorfismo ($\varphi$) y por tanto un abierto.
-    
-    
-\end{itemize}
-
+	Como $S$ es superficie, se tendrá que es un espacio topológico localmente euclídeo, T2 y 2AN.
+	Para ver que $G(f)$ es superficie debemos probar estas tres:
+	\begin{itemize}
+		\item{$G(f)$ es T2}
+		
+		$G(f) \subset S \times \mathbb{R}$. Como $S$ y $\mathbb{R}$ son T2, se tendrá que $S \times \mathbb{R}$ es T2 con la topología producto y por tanto $G(f)$ herederará T2 con la topología inducida.
+		
+		\item{$G(f)$ es 2AN}
+		
+		$G(f) \subset S \times \mathbb{R}$. Como $S$ y $\mathbb{R}$ son 2AN, se tendrá que $S \times \mathbb{R}$ es 2AN con topología producto y por tanto $G(f)$ herederará la propiedad 2AN con la topología inducida.
+		
+		\item{$G(f)$ es localmente euclídeo}:
+		
+		Sea $(x,t) \in G(f)$. Entonces $x \in S$ y $t = f(x) \in \mathbb{R}$. Como $S$ es localmente euclídeo, existirá $U \in \mathcal{U}^x$ entorno abierto de $x$ que será homeomorfo (por $\varphi$) a un abierto $V_1\subset \mathbb{R}^2$.
+		
+		Por otro lado, si consideramos $V_2$ entorno abierto de $f(x)$ tal que $V_2=f(V_1)$, se tendrá que $V_1 \times V_2$ será entorno abierto de $(x,f(x)) \in S \times \mathbb{R}$
+		
+		De hecho, si consideramos $F: V_1 \times f(V_1) \rightarrow F(V_1 \times f(V_1))$
+		dada por $F(x,f(x)) = \varphi(x)$ entonces $F(V_1 \times f(V_1))$ es imagen de un abierto de $S \times \mathbb{R}$ por un homeomorfismo ($\varphi$) y por tanto un abierto.
+		
+		
+	\end{itemize}
+	
 \end{sol}
+
+\begin{ejer}
+(7) Encontrar un atlas de $\mathbb{R}^{2}$, esto es, una familia de cartas en $\mathbb{R}^{2} \mathbb{P}^{2}$ cuyos entornos coordenados recubran $\mathbb{R} \mathbb{P}^{2}$.\\
+\end{ejer}
+
+\begin{ejer}
+(8) Prueba que la característica de Euler de la suma conexa de dos superficies compactas es igual a la suma de sus características de Euler menos dos.\\
+\end{ejer}
+
+\begin{ejer}
+(9) Calcula la característica de Euler de la suma conexa de un plano proyectivo y $n$ toros.\\
+\end{ejer}
+
+\begin{ejer}
+(10) Estudiar la orientabilidad de $S_{1} \# S_{2}$ a partir de la de $S_{1}$ y de $S_{2}$.\\
+\end{ejer}
+
+\begin{ejer}
+(11) Para cada una de las siguientes presentaciones de superficies, calcula la característica de Euler y determina a cual de las superficies modelo es homeomorfa:\\
+a) $\left\langle a, b, c ; a b a c b^{-1} c^{-1}\right\rangle$.\\
+b) $\left\langle a, b, c ; a b c a^{-1} b^{-1} c^{-1}\right\rangle$.\\
+c) $\left\langle a, b, c, d ; a b c d c a^{-1} b d^{-1}\right\rangle$.\\
+d) $\left\langle a, b, c, d, e ; a b a^{-1} c d b^{-1} c^{-1} e d^{-1} e^{-1}\right\rangle$.\\
+e) $\left\langle a, b, c, d, e, f ; a b c a d b^{-1} e f c e^{-1} d f^{-1}\right\rangle$.\\
+f) $\left\langle a, b, c, d, e, f ; a b c, b d e, c^{-1} d f, e^{-1} f a\right\rangle$.\\
+g) $\langle a, b, c, d, e, f, g, h, i, j, k, l, m, n, o$;\\
+$\left.a b c, b d e, d f g, f h i, h a j, c^{-1} k l, e^{-1} m n, g^{-1} o k^{-1}, i^{-1} l^{-1} m^{-1}, j^{-1} n^{-1} o^{-1}\right\rangle$.\\
+h) $\left\langle a, b, c, d, e, f ; a b c, b d e, c^{-1} d f, e^{-1} f a\right\rangle$.\\
+\end{ejer}
+
+\begin{ejer}
+(12) Clasificar la suma conexa de las superficies representadas en los apartados a) y b) del ejercicio anterior.\\
+\end{ejer}
+
+\begin{ejer}
+(13) Demostrar que toda superficie compacta y conexa es homeomorfa a una y sólo una de las siguientes superficies:
+
+$$
+\mathbb{S}^{2}, \quad \mathbb{T}_{n}, \quad \mathbb{R P}^{2}, \quad K, \quad \mathbb{T}_{n} \# \mathbb{R} \mathbb{P}^{2}, \quad \mathbb{T}_{n} \# K
+$$
+\end{ejer}
+
+\begin{ejer}
+(14) Identificar, salvo homeomorfismos, las superficies compactas y conexas con característica de Euler igual a -2.\\
+\end{ejer}
+
+\begin{ejer}
+(15) Sea $S$ una superficie compacta y conexa. Probar que $\chi(S) \geq-2$ si y sólo si $S$ tiene una presentación poligonal $\mathscr{P}=\langle A ; W\rangle$ donde $A$ tiene exactamente 4 elementos.\\
+\end{ejer}
+
+\begin{ejer}
+(16) Discutir de forma razonada si cada par de las siguientes superficies compactas y conexas son o no homeomorfas entre sí:\\
+(a) $S_{1}$ tiene por presentación poligonal a $\left\langle a, b, c, d ; a b c d a d^{-1} c b^{-1}\right\rangle$.\\
+(b) $S_{2}$ cumple $\chi\left(S_{2}\right) \geq 0$ y $\Pi_{1}\left(S_{2}\right)$ no es abeliano.\\
+(c) $S_{3}$ cumple que $\Pi_{1}\left(S_{3}\right) \cong F(a, b, c) / N\left\{a c b c b a^{-1}\right\}$.\\
+\end{ejer}
+
+\begin{ejer}
+(17) Obtener la presentación poligonal canónica de la superficie $S_{1}$ del ejercicio anterior efectuando para ello las transformaciones que sean necesarias.\\
+\end{ejer}
+
+\begin{ejer}
+(18) Sea $S$ la superficie compacta y conexa que admite una presentación poligonal de la forma
+
+$$
+\left\langle a, b, c, d, e ; a b^{-1} c-d a^{-1} e b c^{-1}-\right\rangle
+$$
+
+donde cada guión - está ocupado por una única etiqueta. Completar la palabra para que $S$ sea homeomorfa a:\\
+(a) $\mathbb{T} \# \mathbb{T}$.\\
+(b) $\mathbb{R} \mathbb{P}^{2} \# \mathbb{R} \mathbb{P}^{2} \# \mathbb{R} \mathbb{P}^{2} \# \mathbb{R} \mathbb{P}^{2}$.\\
+(c) La superficie modelo con grupo fundamental abelianizado isomorfo a $\mathbb{Z}_{2} \times \mathbb{Z}^{4}$.\\
+\end{ejer}
+
+\begin{ejer}
+(19) Determina los espacios topológicos compactos $Y$ para los que existe una aplicación recubridora $\pi: Y \rightarrow X$ en cada uno de los siguientes casos:\\
+(a) $X=\mathbb{S}^{2}$.\\
+(b) $X=\mathbb{R} \mathbb{P}^{2}$.\\
+(c) $X=\mathbb{S}^{1} \times \mathbb{S}^{1}$.
+\end{ejer}
 
 
 \end{document}
