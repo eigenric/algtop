@@ -646,6 +646,21 @@ y $A$ es simplemente conexo.
 (34) Sea $f: \mathbb{S}^{1} \rightarrow \mathbb{S}^{1}$ la aplicación dada por $f(z)=z^{n}, n \in \mathbb{N}$. Calcular el homomorfismo inducido $f_{*}: \Pi_{1}\left(\mathbb{S}^{1}, 1\right) \rightarrow \Pi_{1}\left(\mathbb{S}^{1}, 1\right)$.\\
 \end{ejer}
 
+\begin{sol}
+La idea intuitiva se basa en que los lazos en la circunferencia quedan totalmente determinados
+(en clases de homotopía) por sus grados, es decir, el número de vueltas.
+
+Por definición: $f_* : \Pi_1(\mathbb{S}^1, x) \rightarrow \Pi_1(\mathbb{S}^1, x)$ está dada por
+
+$$
+f_*([\alpha_m]) = [f \circ \alpha_m ] = [\alpha_n^m] = [\alpha_{nm}]
+$$
+
+donde $m := \operatorname{deg}(\alpha)$ y $n$ es el exponente de $f$
+
+Donde se ha usado que elevar a $m$ un lazo que da $n$ vuelta resulta en un lazo que da $mn$ vueltas.
+\end{sol}
+
 \begin{ejer}
 (35) Sean $X$ un espacio topológico, $A \subseteq X$ un subconjunto y $a \in A$. ¿Es $\left(i_{A}\right)_{*}: \Pi_{1}(A, a) \rightarrow \Pi_{1}(X, a)$ un monomorfismo? ¿Y si $A$ es un retracto de $X$ ?\\
 \end{ejer}
