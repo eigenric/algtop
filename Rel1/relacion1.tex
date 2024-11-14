@@ -26,7 +26,7 @@
 % \usepackage{xfrac}
 \usepackage{graphicx}
 
-
+\newcommand{\norm}[1]{\left \lVert #1 \right \rVert}
 
 % Fuentes personalizadas para utilizar con XeLaTeX o LuaLaTeX
 
@@ -550,6 +550,60 @@ $$
 \begin{ejer}
 (30) Discutir si la bola unidad cerrada es un retracto de deformación de $\mathbb{R}^{n+1}$.\\
 \end{ejer}
+
+\begin{sol}
+Sí, la idea intuitiva consiste en retraer los puntos de fuera de la bola unidad cerrada a la esfera $\mathbb{S}^n$ y dejar
+los puntos de dentro quietos.
+
+Formalmente, sea $r: \mathbb{R}^{n+1} \rightarrow \bar{B}(0,1)$ dada por 
+
+$$
+r(x) = \begin{cases}
+	\frac{x}{\norm{x}} & \text{si} \quad x \in \mathbb{R}^{n+1} \setminus \bar{B}(0,1) \\
+	x				   &  \text{si} \quad x \in \bar{B}(0,1)
+\end{cases}
+$$
+
+El primer trozo de $r$ es continuo puesto que $x \neq 0$. El segundo es también trivialmente continuo.
+
+Para ver que $r$ es continua:
+
+$$
+\lim \limits_{\norm{x} \to 1} r(x) = \lim \limits_{\norm{x} \to 1} \frac{x}{\norm{x}} = x
+$$
+
+Además, considerando $A := \bar{B}(0, 1)$:
+
+$$
+(r \circ i_A)(x) = r(i_A(x)) = r(x) = x \quad \forall x \in \bar{B}(0,1)
+$$
+
+Luego $r \circ i_A = Id_A$ y $r$ es una retracción. Por lo que la bola unidad cerrada
+en principio es un retracto del espacio $(n+1)$-dimensional.
+
+Para ver que es un retracto de deformación, necesitamos construir una homotopía.
+Sea $H:  \mathbb{R}^{n+1} \times [0,1] \rightarrow \mathbb{R}^{n+1}$ dada por
+
+$$
+H(x, s) = (1-s)x + sr(x)
+$$
+
+Por ser $r$ continua y ser $H$ suma de productos de funciones continuas, $H$ será
+también continua. Además, verifica que
+
+$$
+H(x, 0) = x \quad \forall x \in [0,1]
+$$
+
+$$
+H(x, 1) = r(x) \quad \forall x \in [0,1]
+$$
+
+Por lo que $H: r \circ i_A \simeq Id_A$ es una homotopía entre $r \circ i_A$ y la identidad
+y por tanto $\bar{B}(0, 1)$ es un retracto de deformación de  $\mathbb{R}^{n+1}$ .
+
+
+\end{sol}
 
 \begin{ejer}
 (31) Sea $X$ simplemente conexo y $A \subseteq X$ un retracto de $X$. ¿Es $A$ simplemente conexo?\\
