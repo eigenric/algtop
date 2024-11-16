@@ -241,6 +241,22 @@ Por tanto $\pi_1 \times \pi_2$ es aplicación recubridora.
 (2) Consideremos el espacio recubridor $(\mathbb{R}, \rho)$ de $\mathbb{S}^{1}$ donde $\rho(t)=e^{2 \pi t i}$ para todo $t \in \mathbb{R}$. Demostrar que la aplicación $\left.\rho\right|_{(0,2)}:(0,2) \rightarrow \mathbb{S}^{1}$ es continua, abierta y sobreyectiva pero no es recubridora. ¿Existe alguna aplicación $\psi:(0,2) \rightarrow \mathbb{S}^{1}$ tal que $((0,2), \psi)$ sea un recubridor de $\mathbb{S}^{1}$ ?\\
 \end{ejer}
 
+\begin{sol}
+Necesariamente no se debe cumplir la tercera propiedad de la definición de aplicación recubridora.
+En efecto, sea $1 \in \mathbb{S}^1$ y sea $U$ un arco de circunferencia abierto, entorno suyo. Entonces,
+
+$$
+\rho\vert_{\;]0,2[\;} (U) = \;]0, \varepsilon[\; \cup \;]1-\varepsilon, 1+\varepsilon[\; \cup \;]2-\varepsilon, 2[\;
+$$
+y 
+$$
+\rho\vert_{\;]0, \varepsilon[\;} \to U
+$$
+
+no es un homeomorfismo porque no es sobreyectiva (el \( 1 \) no es imagen de ningún elemento del dominio).
+
+\end{sol}
+
 \begin{ejer}
 (3) Sean $X$ un espacio topológico, $(\widetilde{X}, \pi)$ un recubridor de $X$ y $(\widetilde{\widetilde{X}}, \psi)$ un recubridor de $\widetilde{X}$. Demostrar que si el recubridor $(\widetilde{X}, \pi)$ es finito, entonces $(\widetilde{\widetilde{X}}, \pi \circ \psi)$ es un recubridor de $X$.\\
 \end{ejer}
