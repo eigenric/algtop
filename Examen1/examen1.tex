@@ -1,0 +1,227 @@
+\documentclass[
+  a4paper,
+  spanish,
+  12pt,
+]{scrartcl}
+
+\linespread{1.05}
+%\setlength{\parindent}{18pt}
+
+
+%-------------------------------------------------------------------------------
+%	PAQUETES
+%-------------------------------------------------------------------------------
+
+% Idioma
+
+\usepackage{indentfirst}
+% Matemáticas
+
+\usepackage{mathrsfs}
+
+\usepackage{config}
+\usepackage{amsmath, amsthm, amssymb}
+% \usepackage{mathtools}
+% \usepackage{commath}
+% \usepackage{xfrac}
+\usepackage{graphicx}
+
+\newcommand{\norm}[1]{\left \lVert #1 \right \rVert}
+
+% Fuentes personalizadas para utilizar con XeLaTeX o LuaLaTeX
+
+\usepackage[no-math]{fontspec}
+\setmainfont[WordSpace=1.3, RawFeature={+ss06}]{EBGaramond}
+\setsansfont[Scale=0.9]{Alegreya Sans}
+\setmonofont[Scale=0.75]{Bitstream Vera Sans Mono}
+
+\usepackage[math-style=TeX]{unicode-math}
+\setmathfont{Garamond Math}[StylisticSet={3}]
+
+
+% Configuración de microtype
+
+\defaultfontfeatures{Ligatures=TeX,Numbers=Lining}
+\usepackage[activate={true,nocompatibility},final,tracking=true,factor=1100,stretch=10,shrink=10]{microtype}
+\SetTracking{encoding={*}, shape=sc}{0}
+
+% Enlaces y colores
+
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+  colorlinks=true,
+  citecolor=,
+  linkcolor=,
+  urlcolor=blue,
+}
+
+% Otros elementos de página
+
+\usepackage{enumitem}
+\setlist[enumerate]{leftmargin=-\itemindent, itemsep=0pt}
+\setlist[itemize]{leftmargin=-\itemindent, itemsep=0pt}
+%\setlist[itemize]{leftmargin=*}
+%\setlist[enumerate]{leftmargin=*}
+
+\usepackage[labelfont={sc, sf}, textfont=sf]{caption}
+
+\usepackage{booktabs}
+\renewcommand\arraystretch{1.5}
+
+% Tikz
+
+\usepackage{tikz}
+\usetikzlibrary{babel}
+\usepackage{float}
+
+% Código
+
+\usepackage{listings}
+\lstset{
+	basicstyle=\ttfamily,%
+	breaklines=true,%
+	captionpos=b,                    % sets the caption-position to bottom
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  frame=lines,
+  numbers=left,
+  stepnumber=1,
+  aboveskip=12pt,
+  showstringspaces=false,
+  keywordstyle=\bfseries,
+  commentstyle=\itshape,
+  columns=flexible,
+}
+\renewcommand{\lstlistingname}{Listado}
+
+% ENTORNOS
+
+\usepackage[theorems, skins, breakable]{tcolorbox}
+
+\tcolorboxenvironment{nth}{
+	blanker,
+	breakable,
+	left=12pt,
+	before skip=12pt,
+	after skip=12pt,
+	borderline west={2pt}{0pt}{500},
+	before upper={\parindent 12pt},
+}
+
+\tcolorboxenvironment{nprop}{
+	blanker,
+	breakable,
+	left=12pt,
+	before skip=12pt,
+	after skip=12pt,
+	borderline west={2pt}{0pt}{42},
+	before upper={\parindent 12pt},
+}
+
+\tcolorboxenvironment{ncor}{
+	blanker,
+	breakable,
+	left=12pt,
+	before skip=12pt,
+	after skip=12pt,
+	borderline west={2pt}{0pt}{300},
+	before upper={\parindent 12pt},
+}
+
+\tcolorboxenvironment{ndef}{
+	skin=enhancedmiddle jigsaw,
+	frame hidden,
+	colback= 36,
+	breakable = true,
+	break at = -6pt,
+	top = 4pt,       % Estos márgenes están un poco a ojo
+	bottom = 4pt,
+	left= 8pt,
+	right = 8pt,
+	before skip=8pt, % Normalmente dejamos 12pt, pero
+	after skip=8pt,  % aquí tenemos espacio adicional por el fondo
+	no borderline,
+	borderline west={2pt}{0pt}{42},
+	before upper={\parindent 12pt},
+}
+
+\tcolorboxenvironment{ejer}{
+	skin=enhancedmiddle jigsaw,
+	frame hidden,
+	colback=50,
+	breakable = true,
+	break at = -6pt,
+	top = 4pt,       % Estos márgenes están un poco a ojo
+	bottom = 4pt,
+	left= 8pt,
+	right = 8pt,
+	before skip=8pt, % Normalmente dejamos 12pt, pero
+	after skip=8pt,  % aquí tenemos espacio adicional por el fondo
+	no borderline,
+	borderline west={2pt}{0pt}{500},
+	borderline east={2pt}{0pt}{50},
+	before upper={\parindent 12pt},
+}
+
+
+% Márgenes
+\usepackage[bottom=3.125cm, top=2.5cm, left=3.5cm, right=3.5cm, marginparwidth=70pt]{geometry}
+
+%dealing with (sub/subsub)sections
+%\let\raggedsection\centering%Center all sectioningheads
+%all levels have something in common, let's save typing:
+\RedeclareSectionCommands[beforeskip=-3ex,
+afterskip=2ex]{section,subsection,subsubsection}
+\addtokomafont{section}{\normalfont\large\textsc}
+\RedeclareSectionCommand[beforeskip=-6ex]{section}
+\addtokomafont{subsection}{\normalfont\itshape}
+
+%-------------------------------------------------------------------------------
+%	CONTENIDO
+%-------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{flushright}
+  Ricardo Ruiz Fernández de Alba\vspace{.5em}
+
+  \textit{Topología II}
+
+  Doble Grado en Ingeniería Informática y Matemáticas
+
+  \textsc{Universidad de Granada}\vspace{.5em}
+
+  \today\vspace{.5em}
+\end{flushright}
+
+\begin{flushleft}
+  \scshape\Large Examen 1
+\end{flushleft}
+
+\begin{ejer}
+Enuncia y demuestra el Teorema de Monodromía
+\end{ejer}
+
+\begin{ejer}
+Demostrar que para todo espacio topológico $X$ la sección ecuatorial $A=X \times\{0\}$ es un retracto de deformación de $X \times[-1,1]$. Deducir el tipo de homotopía de la banda $\mathbb{R}^{n} \times[-1,1]$, el cilindro $\mathbb{S}^{n} \times[-1,1]$ y el cubo $[-1,1]^{n+1}$. Discutir qué ocurre si sustituimos $[-1,1]$ por $\mathbb{R}$.\\
+\end{ejer}
+
+\begin{ejer}
+Sean $X=\left\{(x, y, z) \in \mathbb{R}^{3}: x^{2}+y^{2}-z^{2}=1\right\}$ y $\widetilde{X}=\left\{(x, y, z) \in \mathbb{R}^{3}: z=x^{2}+y^{2}\right\}$. Construir explícitamente una aplicación recubridora $\pi: \widetilde{X} \rightarrow X$. ¿Existe una aplicación recubridora $\psi$ : $X \rightarrow \widetilde{X}$ ?\\
+\end{ejer}
+
+\begin{ejer}
+Sea $S$ la superficie compacta y conexa que admite una presentación poligonal de la forma
+	
+$$
+\left\langle a, b, c, d, e ; a b^{-1} c-d a^{-1} e b c^{-1}-\right\rangle
+$$
+	
+donde cada guión - está ocupado por una única etiqueta. Completar la palabra para que $S$ sea homeomorfa a:\\
+(a) $\mathbb{T} \# \mathbb{T}$.\\
+(b) $\mathbb{R} \mathbb{P}^{2} \# \mathbb{R} \mathbb{P}^{2} \# \mathbb{R} \mathbb{P}^{2} \# \mathbb{R} \mathbb{P}^{2}$.\\
+(c) La superficie modelo con grupo fundamental abelianizado isomorfo a $\mathbb{Z}_{2} \times \mathbb{Z}^{4}$.\\
+\end{ejer}
+
+
+\end{document}
