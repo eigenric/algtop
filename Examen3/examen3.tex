@@ -1,0 +1,220 @@
+\documentclass[
+  a4paper,
+  spanish,
+  12pt,
+]{scrartcl}
+
+\linespread{1.05}
+%\setlength{\parindent}{18pt}
+
+
+%-------------------------------------------------------------------------------
+%	PAQUETES
+%-------------------------------------------------------------------------------
+
+% Idioma
+
+\usepackage{indentfirst}
+% Matemáticas
+
+\usepackage{mathrsfs}
+
+\usepackage{config}
+\usepackage{amsmath, amsthm, amssymb}
+% \usepackage{mathtools}
+% \usepackage{commath}
+% \usepackage{xfrac}
+\usepackage{graphicx}
+
+\newcommand{\norm}[1]{\left \lVert #1 \right \rVert}
+
+% Fuentes personalizadas para utilizar con XeLaTeX o LuaLaTeX
+
+\usepackage[no-math]{fontspec}
+\setmainfont[WordSpace=1.3, RawFeature={+ss06}]{EBGaramond}
+\setsansfont[Scale=0.9]{Alegreya Sans}
+\setmonofont[Scale=0.75]{Bitstream Vera Sans Mono}
+
+\usepackage[math-style=TeX]{unicode-math}
+\setmathfont{Garamond Math}[StylisticSet={3}]
+
+
+% Configuración de microtype
+
+\defaultfontfeatures{Ligatures=TeX,Numbers=Lining}
+\usepackage[activate={true,nocompatibility},final,tracking=true,factor=1100,stretch=10,shrink=10]{microtype}
+\SetTracking{encoding={*}, shape=sc}{0}
+
+% Enlaces y colores
+
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+  colorlinks=true,
+  citecolor=,
+  linkcolor=,
+  urlcolor=blue,
+}
+
+% Otros elementos de página
+
+\usepackage{enumitem}
+\setlist[enumerate]{leftmargin=-\itemindent, itemsep=0pt}
+\setlist[itemize]{leftmargin=-\itemindent, itemsep=0pt}
+%\setlist[itemize]{leftmargin=*}
+%\setlist[enumerate]{leftmargin=*}
+
+\usepackage[labelfont={sc, sf}, textfont=sf]{caption}
+
+\usepackage{booktabs}
+\renewcommand\arraystretch{1.5}
+
+% Tikz
+
+\usepackage{tikz}
+\usetikzlibrary{babel}
+\usepackage{float}
+
+% Código
+
+\usepackage{listings}
+\lstset{
+	basicstyle=\ttfamily,%
+	breaklines=true,%
+	captionpos=b,                    % sets the caption-position to bottom
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  frame=lines,
+  numbers=left,
+  stepnumber=1,
+  aboveskip=12pt,
+  showstringspaces=false,
+  keywordstyle=\bfseries,
+  commentstyle=\itshape,
+  columns=flexible,
+}
+\renewcommand{\lstlistingname}{Listado}
+
+% ENTORNOS
+
+\usepackage[theorems, skins, breakable]{tcolorbox}
+
+\tcolorboxenvironment{nth}{
+	blanker,
+	breakable,
+	left=12pt,
+	before skip=12pt,
+	after skip=12pt,
+	borderline west={2pt}{0pt}{500},
+	before upper={\parindent 12pt},
+}
+
+\tcolorboxenvironment{nprop}{
+	blanker,
+	breakable,
+	left=12pt,
+	before skip=12pt,
+	after skip=12pt,
+	borderline west={2pt}{0pt}{42},
+	before upper={\parindent 12pt},
+}
+
+\tcolorboxenvironment{ncor}{
+	blanker,
+	breakable,
+	left=12pt,
+	before skip=12pt,
+	after skip=12pt,
+	borderline west={2pt}{0pt}{300},
+	before upper={\parindent 12pt},
+}
+
+\tcolorboxenvironment{ndef}{
+	skin=enhancedmiddle jigsaw,
+	frame hidden,
+	colback= 36,
+	breakable = true,
+	break at = -6pt,
+	top = 4pt,       % Estos márgenes están un poco a ojo
+	bottom = 4pt,
+	left= 8pt,
+	right = 8pt,
+	before skip=8pt, % Normalmente dejamos 12pt, pero
+	after skip=8pt,  % aquí tenemos espacio adicional por el fondo
+	no borderline,
+	borderline west={2pt}{0pt}{42},
+	before upper={\parindent 12pt},
+}
+
+\tcolorboxenvironment{ejer}{
+	skin=enhancedmiddle jigsaw,
+	frame hidden,
+	colback=50,
+	breakable = true,
+	break at = -6pt,
+	top = 4pt,       % Estos márgenes están un poco a ojo
+	bottom = 4pt,
+	left= 8pt,
+	right = 8pt,
+	before skip=8pt, % Normalmente dejamos 12pt, pero
+	after skip=8pt,  % aquí tenemos espacio adicional por el fondo
+	no borderline,
+	borderline west={2pt}{0pt}{500},
+	borderline east={2pt}{0pt}{50},
+	before upper={\parindent 12pt},
+}
+
+
+% Márgenes
+\usepackage[bottom=3.125cm, top=2.5cm, left=3.5cm, right=3.5cm, marginparwidth=70pt]{geometry}
+
+%dealing with (sub/subsub)sections
+%\let\raggedsection\centering%Center all sectioningheads
+%all levels have something in common, let's save typing:
+\RedeclareSectionCommands[beforeskip=-3ex,
+afterskip=2ex]{section,subsection,subsubsection}
+\addtokomafont{section}{\normalfont\large\textsc}
+\RedeclareSectionCommand[beforeskip=-6ex]{section}
+\addtokomafont{subsection}{\normalfont\itshape}
+
+%-------------------------------------------------------------------------------
+%	CONTENIDO
+%-------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{flushright}
+  Ricardo Ruiz Fernández de Alba\vspace{.5em}
+
+  \textit{Topología II}
+
+  Doble Grado en Ingeniería Informática y Matemáticas
+
+  \textsc{Universidad de Granada}\vspace{.5em}
+
+  \today\vspace{.5em}
+\end{flushright}
+
+\begin{flushleft}
+  \scshape\Large Examen 1
+\end{flushleft}
+
+\begin{ejer}
+Enuncia el Teorema de Levantamiento de aplicaciones
+\end{ejer}
+
+\begin{ejer}
+Calcula el grupo fundamental del toro usando Seifert - Van Kampen.
+\end{ejer}
+
+\begin{ejer}
+Sea $(\widetilde{X}, \pi)$ un recubridor de un espacio topológico $X$ y sean $x_{0} \in X$ y $\widetilde{x}_{0} \in \pi^{-1}\left(x_{0}\right)$. Demostrar que $\pi_{*}: \Pi_{1}\left(\widetilde{X}, \widetilde{x}_{0}\right) \rightarrow \Pi_{1}\left(X, x_{0}\right)$ es un isomorfismo si y sólo si $\pi$ es un homeomorfismo.\\
+\end{ejer}
+
+\begin{ejer}
+Determina los espacios topológicos compactos $Y$ para los que existe una aplicación recubridora $\pi: Y \rightarrow X$ en cada uno de los siguientes casos:\\
+(a) $X=\mathbb{S}^{2}$.\\
+(b) $X=\mathbb{R} \mathbb{P}^{2}$.\\
+(c) $X=\mathbb{S}^{1} \times \mathbb{S}^{1}$.
+\end{ejer}
+
+\end{document}
